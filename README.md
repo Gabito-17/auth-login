@@ -31,6 +31,16 @@
 $ npm install
 ```
 
+## Replace '.env' file in root of the project, with your database information.
+```env
+# PostgreSQL Database Configuration
+DB_HOST = localhost
+DB_PORT = 5432
+DB_USERNAME = postgres
+DB_PASSWORD = ******       # ← reemplazá con tu contraseña real
+DB_NAME = auth-login
+```
+
 ## Compile and run the project
 
 ```bash

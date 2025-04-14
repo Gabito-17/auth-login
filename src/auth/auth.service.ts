@@ -41,11 +41,10 @@ export class AuthService {
         where: { email },
         select: { email: true, password: true },
       });
-      console.log('llega');
       if (!user?.email)
         throw new UnauthorizedException('Credentials are not valid (email)');
 
-      if (bcrypt.compareSync(password, user.password))
+      if (!bcrypt.compareSync(password, user.password))
         throw new UnauthorizedException('Password is not valid');
 
       console.log('llega');
