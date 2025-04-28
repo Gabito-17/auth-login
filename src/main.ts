@@ -13,7 +13,12 @@ async function bootstrap() {
       transform: true, // convierte los tipos automáticamente
     }),
   );
+  app.enableCors({
+    origin: 'http://localhost:3005', // o '*' si querés permitir todos
+    credentials: true, // si usás cookies o sesiones
+  });
 
   await app.listen(3000);
+
 }
 bootstrap();
