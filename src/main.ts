@@ -14,7 +14,7 @@ async function bootstrap() {
     }),
   );
   app.enableCors({
-    origin: 'http://localhost:3005', // o '*' si querés permitir todos
+    origin: 'http://localhost:3005', // o '*' para permitir todos
     credentials: true, // si usás cookies o sesiones
   });
 

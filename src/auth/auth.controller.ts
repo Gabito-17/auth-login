@@ -49,7 +49,8 @@ export class AuthController {
   }
 
   @Get('private3')
-  @Auth()
+  //Definicion de Rol necesario
+  @Auth(ValidRoles.admin)
   testingPrivateRoute3(@GetUser() user: User) {
     return {
       ok: true,
