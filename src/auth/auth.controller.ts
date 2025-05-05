@@ -6,7 +6,7 @@ import { RoleProtected } from './decorators/role-protected.decorator';
 import { CreateUserDto, LoginUserDto } from './dto';
 import { User } from './entities/user.entity';
 import { UserRoleGuard } from './guards/user-role/user-role.guard';
-import { validRoles } from './interfaces';
+import { ValidRoles } from './interfaces';
 
 @Controller('auth')
 export class AuthController {
@@ -39,7 +39,7 @@ export class AuthController {
   }
 
   @Get('private2')
-  @RoleProtected(validRoles.user)
+  @RoleProtected(ValidRoles.user)
   @UseGuards(AuthGuard(), UserRoleGuard)
   testingPrivateRoute2(@GetUser() user: User) {
     return {
@@ -49,7 +49,7 @@ export class AuthController {
   }
 
   @Get('private3')
-  @RoleProtected(validRoles.user)
+  @RoleProtected(ValidRoles.user)
   @UseGuards(AuthGuard(), UserRoleGuard)
   testingPrivateRoute3(@GetUser() user: User) {
     return {
