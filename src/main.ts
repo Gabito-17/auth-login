@@ -5,6 +5,7 @@ import { AppModule } from './app.module';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+  
 
   app.useGlobalPipes(
     new ValidationPipe({
@@ -18,6 +19,10 @@ async function bootstrap() {
     credentials: true, // si usás cookies o sesiones
   });
 
+  const port = process.env.PORT;
+
   await app.listen(3000);
+  //to do: Cambiar el puerto por variable de entorno
+
 }
 bootstrap();
