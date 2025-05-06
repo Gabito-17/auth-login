@@ -50,7 +50,6 @@ export class AuthService {
       if (!bcrypt.compareSync(password, user.password))
         throw new UnauthorizedException('Password is not valid');
 
-      console.log('llega');
       return { ...user, token: this.getJsonWebToken({ id: user.id }) };
     } catch (error) {
       this.handleDBErrors(error);

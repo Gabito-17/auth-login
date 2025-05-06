@@ -1,3 +1,5 @@
-export interface ValidPermissions {
-  id: string;
+export enum ValidPermissions {
+  admin = 'admin',
+  superUser = 'super-user',
+  user = 'user',
 }
