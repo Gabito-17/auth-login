@@ -1,4 +1,4 @@
-# Auth-Temp
+# Auth-Login
 
 🛡️ Template de autenticación y registro usando NestJS, JWT, Bcrypt y PostgreSQL.
 
